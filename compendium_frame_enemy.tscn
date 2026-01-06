@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcr42s5h46j8f"]
+
+[ext_resource type="Script" uid="uid://ktirx72jmt6x" path="res://compendium_frame_enemy.gd" id="1_0ikq4"]
+[ext_resource type="Texture2D" uid="uid://5nr21sccfxmq" path="res://assets/Screenshot_20260103_181329.png" id="2_y68u7"]
+
+[node name="CompendiumFrameEnemy" type="Node2D"]
+script = ExtResource("1_0ikq4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_y68u7")

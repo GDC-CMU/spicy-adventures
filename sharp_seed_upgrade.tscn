@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://di82dy1dm4v2d"]
+
+[ext_resource type="PackedScene" uid="uid://c38k4wb7xq4j6" path="res://upgrades/upgrade.tscn" id="1_u2fdl"]
+[ext_resource type="Script" uid="uid://bgidikofkouam" path="res://sharp_seed_upgrade.gd" id="2_ixiyl"]
+[ext_resource type="Texture2D" uid="uid://07ijflpfm2as" path="res://assets/upgrades/Gemini_Generated_Image_37ymx037ymx037ym-removebg-preview.png" id="2_wxtfs"]
+
+[node name="SharpSeedUpgrade" instance=ExtResource("1_u2fdl")]
+script = ExtResource("2_ixiyl")
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(-8.999999, 0)
+texture = ExtResource("2_wxtfs")
+
+[node name="RichTextLabel" parent="." index="1"]
+text = "Double burn damage, but -5 health every time you eat"

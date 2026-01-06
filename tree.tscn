@@ -1,0 +1,23 @@
+[gd_scene load_steps=8 format=3 uid="uid://pjqcqq0xx036"]
+
+[ext_resource type="Script" uid="uid://b2x1fgmv3e31j" path="res://scripts/tree.gd" id="1_brfkd"]
+[ext_resource type="Texture2D" uid="uid://ckyg7o1578ui6" path="res://assets/tree.png" id="1_nnvrw"]
+[ext_resource type="PackedScene" uid="uid://bceissbrj5wdi" path="res://peppers/vietnamese_chilli.tscn" id="3_d2g23"]
+[ext_resource type="PackedScene" uid="uid://d1scs2thpho4e" path="res://peppers/indian_masala_chilli.tscn" id="4_44ud8"]
+[ext_resource type="PackedScene" uid="uid://b07r4a5uml5n6" path="res://peppers/habero.tscn" id="4_ind6k"]
+[ext_resource type="PackedScene" uid="uid://b8khi5t62cgjc" path="res://carolina_reapers.tscn" id="5_ind6k"]
+[ext_resource type="PackedScene" uid="uid://d04hv42svow0c" path="res://peppers/mexican.tscn" id="6_6vbnm"]
+
+[node name="Tree" type="Node2D"]
+script = ExtResource("1_brfkd")
+available_vegetable_scenes = Array[PackedScene]([ExtResource("3_d2g23"), ExtResource("4_44ud8"), ExtResource("4_ind6k"), ExtResource("5_ind6k"), ExtResource("6_6vbnm")])
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6039191, 0.6039191)
+texture = ExtResource("1_nnvrw")
+
+[connection signal="timeout" from="SpawnTimer" to="." method="spawn_vegetable"]

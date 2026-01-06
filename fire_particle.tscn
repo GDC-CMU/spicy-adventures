@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://36pwj11pm7pu"]
+
+[ext_resource type="Texture2D" uid="uid://cgi18j2j1euv5" path="res://assets/Screenshot_20251229_173651-removebg-preview.png" id="1_x64tl"]
+[ext_resource type="Script" uid="uid://dhtwqygvd1oim" path="res://fire_particle.gd" id="2_um0ju"]
+
+[node name="FireParticle" type="Sprite2D"]
+scale = Vector2(0.20791948, 0.20791948)
+texture = ExtResource("1_x64tl")
+script = ExtResource("2_um0ju")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

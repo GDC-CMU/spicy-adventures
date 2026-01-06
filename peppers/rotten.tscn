@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://jg7se4tuwc3a"]
+
+[ext_resource type="PackedScene" uid="uid://dm62shr68tyrk" path="res://peppers/vegetable.tscn" id="1_qpwp2"]
+[ext_resource type="Texture2D" uid="uid://biy22acl0coae" path="res://assets/Gemini_Generated_Image_p2k4ybp2k4ybp2k4-removebg-preview.png" id="2_bgdi1"]
+[ext_resource type="Script" uid="uid://dw1sannch56pg" path="res://peppers/rotten.gd" id="2_vruwa"]
+
+[node name="Rotten" instance=ExtResource("1_qpwp2")]
+script = ExtResource("2_vruwa")
+id = "rotten"
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+scale = Vector2(0.1695692, 0.1695692)
+texture = ExtResource("2_bgdi1")

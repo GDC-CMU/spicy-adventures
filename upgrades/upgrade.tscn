@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://c38k4wb7xq4j6"]
+
+[ext_resource type="Texture2D" uid="uid://bjxdi16xvcfmb" path="res://assets/upgrades/Gemini_Generated_Image_tlmn6ftlmn6ftlmn-removebg-preview.png" id="1_hgitt"]
+[ext_resource type="Script" uid="uid://8j77sca04s7x" path="res://scripts/upgrade.gd" id="1_hj5gr"]
+[ext_resource type="FontFile" uid="uid://dedblkcoem75x" path="res://assets/m5x7.ttf" id="2_hj5gr"]
+
+[node name="Upgrade" type="Node2D"]
+script = ExtResource("1_hj5gr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6521112, 0.6521112)
+texture = ExtResource("1_hgitt")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -107.0
+offset_top = 42.999996
+offset_right = 99.585785
+offset_bottom = 151.78189
+scale = Vector2(1.002005, 1.002005)
+theme_override_fonts/normal_font = ExtResource("2_hj5gr")
+theme_override_font_sizes/normal_font_size = 31
+text = "+1 burn for all damaging peppers"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+show_behind_parent = true
+offset_left = -126.0
+offset_top = -170.0
+offset_right = 112.0
+offset_bottom = 176.0
+
+[connection signal="button_down" from="Button" to="." method="select"]

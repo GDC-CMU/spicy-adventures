@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://drc6t3ekh6g33"]
+
+[ext_resource type="PackedScene" uid="uid://dhk1bam6w0ido" path="res://enemies/enemy.tscn" id="1_3aurc"]
+[ext_resource type="Texture2D" uid="uid://bpqkuy1us6238" path="res://assets/Gemini_Generated_Image_61e78x61e78x61e7-removebg-preview.png" id="2_xfkbl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3aurc"]
+size = Vector2(38, 68)
+
+[node name="IceSpike" instance=ExtResource("1_3aurc")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_3aurc")
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.15930283, 0.15930283)
+texture = ExtResource("2_xfkbl")
+
+[node name="HealthBar" parent="." index="2"]
+offset_left = -22.0
+offset_top = 37.0
+offset_right = 24.0
+offset_bottom = 42.0

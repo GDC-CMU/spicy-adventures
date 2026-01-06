@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8khi5t62cgjc"]
+
+[ext_resource type="PackedScene" uid="uid://dm62shr68tyrk" path="res://peppers/vegetable.tscn" id="1_lklnr"]
+[ext_resource type="Script" uid="uid://d10jwm0wboqq7" path="res://carolina_reapers.gd" id="2_1kpj2"]
+[ext_resource type="Texture2D" uid="uid://b5hpn8hb5hbku" path="res://assets/pixelated-image-removebg-preview.png" id="2_d17tc"]
+[ext_resource type="PackedScene" uid="uid://bsgqed8l224d1" path="res://focused_fire.tscn" id="3_7wj3q"]
+[ext_resource type="PackedScene" uid="uid://jg7se4tuwc3a" path="res://peppers/rotten.tscn" id="4_ms58c"]
+
+[node name="CarolinaReapers" instance=ExtResource("1_lklnr")]
+script = ExtResource("2_1kpj2")
+attack_scene = ExtResource("3_7wj3q")
+rotten = ExtResource("4_ms58c")
+id = "carolina"
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+position = Vector2(4, 0)
+scale = Vector2(0.12213769, 0.12213769)
+texture = ExtResource("2_d17tc")

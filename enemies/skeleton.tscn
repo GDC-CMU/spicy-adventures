@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://b70l66bqr77ly"]
+
+[ext_resource type="PackedScene" uid="uid://dhk1bam6w0ido" path="res://enemies/enemy.tscn" id="1_eq7ty"]
+[ext_resource type="Script" uid="uid://3xsnqn72qegh" path="res://scripts/skeleton.gd" id="2_odbwd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_crlql"]
+radius = 50.0
+
+[node name="Skeleton" instance=ExtResource("1_eq7ty")]
+script = ExtResource("2_odbwd")
+speed = 300.0
+max_health = 2.0
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_crlql")
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.36566988, 0.36566988)
+
+[node name="HealthBar" parent="." index="2"]
+offset_left = -36.0
+offset_top = 43.0
+offset_right = 48.0
+offset_bottom = 70.0

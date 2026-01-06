@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://br1q742wshg85"]
+
+[ext_resource type="PackedScene" uid="uid://c38k4wb7xq4j6" path="res://upgrades/upgrade.tscn" id="1_36hxt"]
+[ext_resource type="Script" uid="uid://dh1lrnw2rhkut" path="res://emergency_heat_upgrade.gd" id="2_kji7m"]
+[ext_resource type="Texture2D" uid="uid://ct8elrbkl84id" path="res://assets/upgrades/Gemini_Generated_Image_9ziln99ziln99zil-removebg-preview.png" id="3_k5wl2"]
+
+[node name="EmergencyHeatUpgrade" instance=ExtResource("1_36hxt")]
+script = ExtResource("2_kji7m")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_k5wl2")
+
+[node name="RichTextLabel" parent="." index="1"]
+text = "Press 'A' for instant +100 heat.
+Can be used once per level"

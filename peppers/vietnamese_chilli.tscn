@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://bceissbrj5wdi"]
+
+[ext_resource type="PackedScene" uid="uid://dm62shr68tyrk" path="res://peppers/vegetable.tscn" id="1_1i2fb"]
+[ext_resource type="Texture2D" uid="uid://drbe2v6n7txm1" path="res://assets/vietnamese.png" id="2_l31ky"]
+[ext_resource type="Script" uid="uid://cgajkpdmapcuw" path="res://scripts/vegetables/vietnamese_chilli.gd" id="2_uqp6i"]
+[ext_resource type="PackedScene" uid="uid://jg7se4tuwc3a" path="res://peppers/rotten.tscn" id="3_ciryj"]
+
+[node name="VietnameseChilli" instance=ExtResource("1_1i2fb")]
+script = ExtResource("2_uqp6i")
+rotten = ExtResource("3_ciryj")
+id = "vietnam"
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+position = Vector2(1.0000019, -2)
+scale = Vector2(0.13912578, 0.13912576)
+texture = ExtResource("2_l31ky")

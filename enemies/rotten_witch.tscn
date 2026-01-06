@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://blwoxnaoaot0g"]
+
+[ext_resource type="PackedScene" uid="uid://dhk1bam6w0ido" path="res://enemies/enemy.tscn" id="1_oyiq2"]
+[ext_resource type="Script" uid="uid://cl3v5dq7lalau" path="res://scripts/rotten_witch.gd" id="2_t447p"]
+[ext_resource type="Texture2D" uid="uid://w1mybc1tk23h" path="res://assets/enemies/Gemini_Generated_Image_enitohenitohenit-removebg-preview.png" id="3_k7sdv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ps7bo"]
+radius = 120.15407
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oyiq2"]
+radius = 282.5668
+
+[node name="RottenWitch" instance=ExtResource("1_oyiq2")]
+script = ExtResource("2_t447p")
+speed = 200.0
+
+[node name="CollisionShape2D" parent="." index="0"]
+scale = Vector2(0.74329996, 0.74329996)
+shape = SubResource("CircleShape2D_ps7bo")
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.44792545, 0.44792545)
+texture = ExtResource("3_k7sdv")
+
+[node name="HealthBar" parent="." index="2"]
+offset_left = -83.0
+offset_top = 88.0
+offset_right = 78.0
+offset_bottom = 107.0
+
+[node name="TargetRefreshTimer" type="Timer" parent="." index="3"]
+
+[node name="RotRange" type="Area2D" parent="." index="4"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RotRange" index="0"]
+scale = Vector2(0.6979006, 0.6979006)
+shape = SubResource("CircleShape2D_oyiq2")
+metadata/_edit_lock_ = true
+
+[connection signal="timeout" from="TargetRefreshTimer" to="." method="find_target"]
+[connection signal="area_entered" from="RotRange" to="." method="_on_rot_range_area_entered"]

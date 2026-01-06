@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://wwtk2h6n2rl"]
+
+[ext_resource type="PackedScene" uid="uid://cbrx1fscukb5w" path="res://attacks/Attack.tscn" id="1_3tti0"]
+[ext_resource type="Texture2D" uid="uid://bjsy8rbnbk25r" path="res://attacks/Gemini_Generated_Image_oxher4oxher4oxhe-removebg-preview.png" id="2_5557p"]
+[ext_resource type="Script" uid="uid://73vnkrug8ax8" path="res://attacks/ring.gd" id="2_fuaqo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5557p"]
+radius = 300.0
+
+[node name="Ring" instance=ExtResource("1_3tti0")]
+script = ExtResource("2_fuaqo")
+spin_speed = 1.0
+damage = 3.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0"]
+position = Vector2(0, -23)
+scale = Vector2(1.8668817, 1.8668817)
+texture = ExtResource("2_5557p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CircleShape2D_5557p")

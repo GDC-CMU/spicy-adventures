@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://b07r4a5uml5n6"]
+
+[ext_resource type="PackedScene" uid="uid://dm62shr68tyrk" path="res://peppers/vegetable.tscn" id="1_yquuu"]
+[ext_resource type="Script" uid="uid://bdoji5frrbcie" path="res://peppers/habero.gd" id="2_4ikcj"]
+[ext_resource type="PackedScene" uid="uid://wwtk2h6n2rl" path="res://attacks/ring.tscn" id="2_21mnm"]
+[ext_resource type="Texture2D" uid="uid://b7rjpvwd1e5rd" path="res://assets/Gemini_Generated_Image_c0sdglc0sdglc0sd-removebg-preview.png" id="2_ghpby"]
+[ext_resource type="PackedScene" uid="uid://jg7se4tuwc3a" path="res://peppers/rotten.tscn" id="3_4ikcj"]
+
+[node name="Habero" instance=ExtResource("1_yquuu")]
+script = ExtResource("2_4ikcj")
+attack_scene = ExtResource("2_21mnm")
+rotten = ExtResource("3_4ikcj")
+id = "habero"
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+position = Vector2(3, -11)
+scale = Vector2(0.19063346, 0.19063346)
+texture = ExtResource("2_ghpby")

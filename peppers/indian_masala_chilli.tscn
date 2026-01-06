@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1scs2thpho4e"]
+
+[ext_resource type="PackedScene" uid="uid://dm62shr68tyrk" path="res://peppers/vegetable.tscn" id="1_fxhn8"]
+[ext_resource type="Script" uid="uid://7jx201vmq3g1" path="res://scripts/vegetables/indian_masala_chilli.gd" id="2_2vts4"]
+[ext_resource type="Texture2D" uid="uid://bcmqule842o8d" path="res://assets/indian.png" id="2_iiflg"]
+[ext_resource type="PackedScene" uid="uid://b6wvh4n8pjk23" path="res://attacks/indian_fire.tscn" id="3_2vts4"]
+[ext_resource type="PackedScene" uid="uid://jg7se4tuwc3a" path="res://peppers/rotten.tscn" id="4_1b4bq"]
+
+[node name="IndianMasalaChilli" instance=ExtResource("1_fxhn8")]
+script = ExtResource("2_2vts4")
+attack_scene = ExtResource("3_2vts4")
+rotten = ExtResource("4_1b4bq")
+id = "india"
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+position = Vector2(4.7683716e-07, -1.9999995)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_iiflg")

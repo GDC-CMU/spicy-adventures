@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3xc6prb7dcrs"]
+
+[ext_resource type="PackedScene" uid="uid://dhk1bam6w0ido" path="res://enemies/enemy.tscn" id="1_ey06c"]
+[ext_resource type="Script" uid="uid://27s0ni0bmn3u" path="res://enemies/ice_wizard.gd" id="2_cg7af"]
+[ext_resource type="PackedScene" uid="uid://dyd045fmvfdgb" path="res://enemies/ice_shard.tscn" id="3_0mag2"]
+[ext_resource type="Texture2D" uid="uid://d344k8t6lbv7c" path="res://assets/enemies/Gemini_Generated_Image_lmi4awlmi4awlmi4-removebg-preview.png" id="4_1dukx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wr27d"]
+size = Vector2(203, 226)
+
+[node name="IceWizard" instance=ExtResource("1_ey06c")]
+script = ExtResource("2_cg7af")
+projectile = ExtResource("3_0mag2")
+max_health = 3.0
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-3.5, 0)
+scale = Vector2(0.56175464, 0.56175464)
+shape = SubResource("RectangleShape2D_wr27d")
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.33499977, 0.33499977)
+texture = ExtResource("4_1dukx")
+
+[node name="HealthBar" parent="." index="2"]
+offset_left = -50.0
+offset_top = 63.0
+offset_right = 49.0
+offset_bottom = 73.0
+
+[node name="ThrowTimer" type="Timer" parent="." index="3"]
+wait_time = 4.0
+autostart = true
+
+[node name="WanderTimer" type="Timer" parent="." index="4"]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="ThrowTimer" to="." method="_on_throw_timer_timeout"]
+[connection signal="timeout" from="WanderTimer" to="." method="new_wander_direction"]

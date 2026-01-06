@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://de0hgqqvrd0pu"]
+
+[ext_resource type="PackedScene" uid="uid://c38k4wb7xq4j6" path="res://upgrades/upgrade.tscn" id="1_cmrex"]
+[ext_resource type="Script" uid="uid://bpgfvfx548ovf" path="res://upgrades/hyper_upgrade.gd" id="2_bm462"]
+[ext_resource type="Texture2D" uid="uid://bfje5nro855ow" path="res://assets/upgrades/Gemini_Generated_Image_movllymovllymovl-removebg-preview.png" id="2_vuydd"]
+
+[node name="HyperUpgrade" instance=ExtResource("1_cmrex")]
+script = ExtResource("2_bm462")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_vuydd")
+
+[node name="RichTextLabel" parent="." index="1"]
+text = "Gain a speed boost every time you eat"

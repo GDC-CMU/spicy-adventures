@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsukqjgoscnc1"]
+
+[ext_resource type="Script" uid="uid://ceik8rcn3cng4" path="res://compendium_pepper_frame.gd" id="1_iw031"]
+[ext_resource type="Texture2D" uid="uid://5nr21sccfxmq" path="res://assets/Screenshot_20260103_181329.png" id="2_3br20"]
+[ext_resource type="PackedScene" uid="uid://bceissbrj5wdi" path="res://peppers/vietnamese_chilli.tscn" id="2_gq68s"]
+
+[node name="CompendiumPepperFrame" type="Node2D"]
+script = ExtResource("1_iw031")
+vegetable_scene = ExtResource("2_gq68s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_3br20")
+
+[node name="Button" type="Button" parent="."]
+show_behind_parent = true
+offset_left = -38.0
+offset_top = -33.0
+offset_right = 38.0
+offset_bottom = 33.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6wvh4n8pjk23"]
+
+[ext_resource type="PackedScene" uid="uid://cbrx1fscukb5w" path="res://attacks/Attack.tscn" id="1_q0lj6"]
+[ext_resource type="Script" uid="uid://c8ekvnhk43y31" path="res://scripts/indian_fire.gd" id="2_vbodt"]
+
+[node name="IndianFire" instance=ExtResource("1_q0lj6")]
+modulate = Color(1, 1, 1, 0.7764706)
+self_modulate = Color(1, 1, 1, 0.5294118)
+script = ExtResource("2_vbodt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
+rotation = 0.69341063
+polygon = PackedVector2Array(0, -400, 99, -387, 198, -347, 273, -291, 344, -203, 386, -107, 401, -1, 0, 0)

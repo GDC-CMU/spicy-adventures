@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://6vqgyabp4n4j"]
+
+[ext_resource type="PackedScene" uid="uid://c38k4wb7xq4j6" path="res://upgrades/upgrade.tscn" id="1_gblhc"]
+[ext_resource type="Script" uid="uid://dcm2mm3t1rist" path="res://upgrades/combo_upgrade.gd" id="2_b5avo"]
+[ext_resource type="Texture2D" uid="uid://cgr2rlvpk24gq" path="res://assets/upgrades/Gemini_Generated_Image_bot1o5bot1o5bot1-removebg-preview.png" id="2_p32vp"]
+
+[node name="ComboUpgrade" instance=ExtResource("1_gblhc")]
+script = ExtResource("2_b5avo")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_p32vp")
+
+[node name="RichTextLabel" parent="." index="1"]
+text = "+0.2 multiplier for each consecutive pepper"

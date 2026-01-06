@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp0mhbp6t3s0x"]
+
+[ext_resource type="Script" uid="uid://jhyq561ktyfu" path="res://win_zone.gd" id="1_qvyui"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6hdu"]
+size = Vector2(290.75, 889)
+
+[node name="WinZone" type="Area2D"]
+modulate = Color(0, 1, 0, 1)
+script = ExtResource("1_qvyui")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(640.375, 330.5)
+shape = SubResource("RectangleShape2D_n6hdu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.21960784)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 1, 0, 1)

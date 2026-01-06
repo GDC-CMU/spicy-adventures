@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddclncyyuy1tp"]
+
+[ext_resource type="Texture2D" uid="uid://dpwihbocy6iyq" path="res://assets/Gemini_Generated_Image_2hryp32hryp32hry.png" id="1_fwmhc"]
+[ext_resource type="PackedScene" uid="uid://cnt416txh0opa" path="res://walls.tscn" id="2_gvs8d"]
+
+[node name="PepperCompendium" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1358, 781)
+texture = ExtResource("1_fwmhc")
+
+[node name="Walls" parent="." instance=ExtResource("2_gvs8d")]
+position = Vector2(10, -615)
+tile_map_data = PackedByteArray()
+collision_visibility_mode = 0

@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://d04hv42svow0c"]
+
+[ext_resource type="PackedScene" uid="uid://dm62shr68tyrk" path="res://peppers/vegetable.tscn" id="1_fu48c"]
+[ext_resource type="Script" uid="uid://b6tjeqmtkgd0s" path="res://peppers/mexican.gd" id="2_usbsx"]
+[ext_resource type="PackedScene" uid="uid://cptplegeq0dbr" path="res://mexican_fire.tscn" id="3_guht6"]
+[ext_resource type="PackedScene" uid="uid://jg7se4tuwc3a" path="res://peppers/rotten.tscn" id="4_4qce3"]
+[ext_resource type="Texture2D" uid="uid://5tor3f83etd0" path="res://assets/pixelated-image__1_-removebg-preview.png" id="5_guht6"]
+
+[node name="Mexican" instance=ExtResource("1_fu48c")]
+script = ExtResource("2_usbsx")
+attack_scene = ExtResource("3_guht6")
+rotten = ExtResource("4_4qce3")
+id = "mexican"
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
+position = Vector2(2, 0)
+scale = Vector2(0.1284766, 0.1284766)
+texture = ExtResource("5_guht6")

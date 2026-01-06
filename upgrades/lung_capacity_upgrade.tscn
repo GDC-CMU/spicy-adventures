@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce0qkti2jws31"]
+
+[ext_resource type="PackedScene" uid="uid://c38k4wb7xq4j6" path="res://upgrades/upgrade.tscn" id="1_esk85"]
+[ext_resource type="Script" uid="uid://bgga1yeuvo80h" path="res://scripts/lung_capacity_upgrade.gd" id="2_qsdsw"]
+[ext_resource type="Texture2D" uid="uid://bh3p6fb87js7s" path="res://assets/upgrades/Gemini_Generated_Image_rgsd9wrgsd9wrgsd-removebg-preview.png" id="3_lg0as"]
+
+[node name="LungCapacityUpgrade" instance=ExtResource("1_esk85")]
+script = ExtResource("2_qsdsw")
+repeat = true
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_lg0as")
+
+[node name="RichTextLabel" parent="." index="1"]
+text = "+ 10 heat capacity"

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ertxb38fpde"]
+
+[ext_resource type="PackedScene" uid="uid://c0h1qiqrwfk6c" path="res://levels/level.tscn" id="1_oi3di"]
+[ext_resource type="PackedScene" uid="uid://pjqcqq0xx036" path="res://tree.tscn" id="5_f2txt"]
+[ext_resource type="PackedScene" uid="uid://dk6s5jdvvrerq" path="res://spawner.tscn" id="7_n6hdu"]
+
+[node name="Level" instance=ExtResource("1_oi3di")]
+
+[node name="Walls" parent="." index="1"]
+tile_map_data = PackedByteArray()
+
+[node name="Spawner" parent="." index="4" instance=ExtResource("7_n6hdu")]
+position = Vector2(1990, -478)
+
+[node name="Tree" parent="." index="5" instance=ExtResource("5_f2txt")]
+position = Vector2(1118, -39)

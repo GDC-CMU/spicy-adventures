@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv2j7j6j05msf"]
+
+[ext_resource type="PackedScene" uid="uid://dhk1bam6w0ido" path="res://enemies/enemy.tscn" id="1_d4rjp"]
+[ext_resource type="Script" uid="uid://2s8i4nwom5tr" path="res://thief.gd" id="2_0cdrf"]
+[ext_resource type="Texture2D" uid="uid://dvd7vc6qdnvay" path="res://assets/enemies/Gemini_Generated_Image_7o3vp27o3vp27o3v-removebg-preview.png" id="3_pgitp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4rjp"]
+size = Vector2(95, 123)
+
+[node name="Thief" instance=ExtResource("1_d4rjp")]
+script = ExtResource("2_0cdrf")
+speed = 400.0
+max_health = 1.0
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(5.5, 7.5)
+shape = SubResource("RectangleShape2D_d4rjp")
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.35089165, 0.35089165)
+texture = ExtResource("3_pgitp")
+
+[node name="HealthBar" parent="." index="2"]
+offset_left = -60.0
+offset_top = 71.0
+offset_right = 60.0
+offset_bottom = 91.0

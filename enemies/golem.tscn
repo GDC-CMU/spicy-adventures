@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqvfi47nlxdb6"]
+
+[ext_resource type="PackedScene" uid="uid://dhk1bam6w0ido" path="res://enemies/enemy.tscn" id="1_k8bo3"]
+[ext_resource type="Script" uid="uid://3xsnqn72qegh" path="res://scripts/skeleton.gd" id="2_8t0fm"]
+[ext_resource type="Texture2D" uid="uid://dksc38u3nackj" path="res://assets/enemies/Gemini_Generated_Image_rg57l8rg57l8rg57-removebg-preview.png" id="3_3giwd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i6v8o"]
+radius = 158.15498
+
+[node name="Golem" instance=ExtResource("1_k8bo3")]
+script = ExtResource("2_8t0fm")
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_i6v8o")
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.8538356, 0.8538356)
+texture = ExtResource("3_3giwd")
+
+[node name="HealthBar" parent="." index="2"]
+offset_left = -120.0
+offset_top = 146.0
+offset_right = 139.0
+offset_bottom = 175.0

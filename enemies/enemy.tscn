@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhk1bam6w0ido"]
+
+[ext_resource type="Script" uid="uid://dlv5cl7ixh7ea" path="res://scripts/enemy.gd" id="1_7k104"]
+[ext_resource type="Texture2D" uid="uid://bh3c6e7cpk22k" path="res://assets/enemies/skeleton_background-removebg-preview.png" id="2_4gyqm"]
+
+[sub_resource type="Theme" id="Theme_7frlh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7frlh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_orwns"]
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_7k104")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4gyqm")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -180.0
+offset_top = 147.0
+offset_right = 178.0
+offset_bottom = 201.0
+theme = SubResource("Theme_7frlh")
+theme_override_styles/background = SubResource("StyleBoxFlat_7frlh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_orwns")
+value = 100.0
+show_percentage = false

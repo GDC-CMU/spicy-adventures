@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdgvd6xyjm5ux"]
+
+[ext_resource type="PackedScene" uid="uid://c38k4wb7xq4j6" path="res://upgrades/upgrade.tscn" id="1_w35be"]
+[ext_resource type="Script" uid="uid://dg3xp8cs22a6p" path="res://scripts/extra_sunlight_upgrade.gd" id="2_yfn6f"]
+
+[node name="ExtraSunlightUpgrade" instance=ExtResource("1_w35be")]
+script = ExtResource("2_yfn6f")
+repeat = true
+
+[node name="RichTextLabel" parent="." index="1"]
+offset_top = 40.999996
+offset_bottom = 149.78189
+text = "+3 burn for all damaging peppers"

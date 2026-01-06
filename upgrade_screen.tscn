@@ -1,0 +1,44 @@
+[gd_scene load_steps=13 format=3 uid="uid://b1a1a1hma57j"]
+
+[ext_resource type="Texture2D" uid="uid://crhobatt13uxc" path="res://assets/upgrade.jpg" id="1_adbc8"]
+[ext_resource type="Script" uid="uid://ccxd8fthhb6sg" path="res://upgrade_screen.gd" id="1_bfcw2"]
+[ext_resource type="PackedScene" uid="uid://bdgvd6xyjm5ux" path="res://upgrades/extra_sunlight_upgrade.tscn" id="2_scxlh"]
+[ext_resource type="PackedScene" uid="uid://dyqq6fj1b0bpb" path="res://upgrades/light_armor_upgrade.tscn" id="3_l7xai"]
+[ext_resource type="PackedScene" uid="uid://ce0qkti2jws31" path="res://upgrades/lung_capacity_upgrade.tscn" id="4_3v5w7"]
+[ext_resource type="PackedScene" uid="uid://6vqgyabp4n4j" path="res://upgrades/combo_upgrade.tscn" id="4_l7xai"]
+[ext_resource type="PackedScene" uid="uid://di82dy1dm4v2d" path="res://sharp_seed_upgrade.tscn" id="5_q7v8b"]
+[ext_resource type="PackedScene" uid="uid://cl8l125pwvxy4" path="res://upgrades/milk_upgrade.tscn" id="6_x8up1"]
+[ext_resource type="PackedScene" uid="uid://de0hgqqvrd0pu" path="res://upgrades/hyper_upgrade.tscn" id="7_gade5"]
+[ext_resource type="PackedScene" uid="uid://cltty716p27rk" path="res://transmutation_copy_upgrade.tscn" id="8_8wnfg"]
+[ext_resource type="PackedScene" uid="uid://doq3xjf1p6e0l" path="res://upgrades/extra_fiber_upgrade.tscn" id="9_w6yqo"]
+[ext_resource type="PackedScene" uid="uid://br1q742wshg85" path="res://upgrades/emergency_heat_upgrade.tscn" id="11_4g0ik"]
+
+[node name="UpgradeScreen" type="Node2D"]
+script = ExtResource("1_bfcw2")
+upgrade_list_scene = Array[PackedScene]([ExtResource("4_3v5w7"), ExtResource("3_l7xai"), ExtResource("4_l7xai"), ExtResource("5_q7v8b"), ExtResource("6_x8up1"), ExtResource("7_gade5"), ExtResource("8_8wnfg"), ExtResource("9_w6yqo"), ExtResource("2_scxlh"), ExtResource("11_4g0ik")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(579, 320)
+scale = Vector2(1.125641, 1.125641)
+texture = ExtResource("1_adbc8")
+
+[node name="upgrade1" parent="." instance=ExtResource("2_scxlh")]
+visible = false
+position = Vector2(249, 337)
+
+[node name="upgrade2" parent="." instance=ExtResource("2_scxlh")]
+visible = false
+position = Vector2(604, 340)
+
+[node name="upgrade3" parent="." instance=ExtResource("2_scxlh")]
+visible = false
+position = Vector2(974, 337)
+
+[node name="ConfirmButton" type="Button" parent="."]
+show_behind_parent = true
+offset_left = 472.0
+offset_top = 574.0
+offset_right = 709.0
+offset_bottom = 622.0
+
+[connection signal="button_down" from="ConfirmButton" to="." method="confirm"]

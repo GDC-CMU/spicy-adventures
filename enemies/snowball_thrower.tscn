@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://c25v0cbk6bo0q"]
+
+[ext_resource type="PackedScene" uid="uid://dhk1bam6w0ido" path="res://enemies/enemy.tscn" id="1_v6tg2"]
+[ext_resource type="Script" uid="uid://cfl35j6ax0x7v" path="res://enemies/snowball_thrower.gd" id="2_g4m43"]
+[ext_resource type="Texture2D" uid="uid://betfvuoqlfu22" path="res://assets/enemies/Gemini_Generated_Image_822mvf822mvf822m-removebg-preview.png" id="2_qlbi5"]
+[ext_resource type="PackedScene" uid="uid://b5o31bw08j8la" path="res://enemies/snowball.tscn" id="3_g4m43"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4m43"]
+size = Vector2(238, 285)
+
+[node name="SnowballThrower" instance=ExtResource("1_v6tg2")]
+script = ExtResource("2_g4m43")
+projectile = ExtResource("3_g4m43")
+speed = 200.0
+max_health = 1.0
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 3.0000014)
+scale = Vector2(0.37056357, 0.40674126)
+shape = SubResource("RectangleShape2D_g4m43")
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.38479838, 0.38479838)
+texture = ExtResource("2_qlbi5")
+
+[node name="HealthBar" parent="." index="2"]
+offset_left = -38.0
+offset_top = 60.0
+offset_right = 47.0
+offset_bottom = 87.0
+
+[node name="WanderTimer" type="Timer" parent="." index="3"]
+wait_time = 3.0
+autostart = true
+
+[node name="ThrowTimer" type="Timer" parent="." index="4"]
+wait_time = 1.5
+autostart = true
+
+[connection signal="timeout" from="WanderTimer" to="." method="new_wander_direction"]
+[connection signal="timeout" from="ThrowTimer" to="." method="_on_throw_timer_timeout"]

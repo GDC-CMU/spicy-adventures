@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyd045fmvfdgb"]
+
+[ext_resource type="PackedScene" uid="uid://namb3tekd3u0" path="res://enemies/projectile.tscn" id="1_6gf3e"]
+[ext_resource type="Script" uid="uid://b5kweng157g86" path="res://enemies/ice_shard.gd" id="2_6j8hu"]
+[ext_resource type="Texture2D" uid="uid://dakc037rkmkg1" path="res://assets/enemies/Gemini_Generated_Image_xd40znxd40znxd40-removebg-preview.png" id="2_ivfiy"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_6j8hu"]
+points = PackedVector2Array(7.1686677e-06, 164, -74, 73, -1.0000075, -172, 71, 75)
+
+[node name="Snowball" instance=ExtResource("1_6gf3e")]
+script = ExtResource("2_6j8hu")
+
+[node name="CollisionShape2D" parent="." index="0"]
+rotation = 1.5707964
+scale = Vector2(0.23842426, 0.23842426)
+shape = SubResource("ConvexPolygonShape2D_6j8hu")
+
+[node name="Sprite2D" parent="." index="1"]
+rotation = 1.5707964
+scale = Vector2(0.2315557, 0.2315557)
+texture = ExtResource("2_ivfiy")

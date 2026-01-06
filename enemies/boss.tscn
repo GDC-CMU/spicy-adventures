@@ -1,0 +1,56 @@
+[gd_scene load_steps=16 format=3 uid="uid://cuwqlkd1jfcsb"]
+
+[ext_resource type="PackedScene" uid="uid://dhk1bam6w0ido" path="res://enemies/enemy.tscn" id="1_7hfrd"]
+[ext_resource type="Texture2D" uid="uid://bgh6yh7tq7fgy" path="res://assets/enemies/Gemini_Generated_Image_advnnkadvnnkadvn-removebg-preview.png" id="2_a60ye"]
+[ext_resource type="Script" uid="uid://4i5e7orhlnlx" path="res://enemies/boss.gd" id="2_n18d2"]
+[ext_resource type="PackedScene" uid="uid://d0urolgataw8w" path="res://big_snowball.tscn" id="3_nbsx1"]
+[ext_resource type="PackedScene" uid="uid://c3mj13h0skwnb" path="res://enemies/spike_wall.tscn" id="4_85rbr"]
+[ext_resource type="PackedScene" uid="uid://b5o31bw08j8la" path="res://enemies/snowball.tscn" id="5_inxvj"]
+[ext_resource type="PackedScene" uid="uid://dyd045fmvfdgb" path="res://enemies/ice_shard.tscn" id="6_lh55n"]
+[ext_resource type="PackedScene" uid="uid://c25v0cbk6bo0q" path="res://enemies/snowball_thrower.tscn" id="7_6l5el"]
+[ext_resource type="PackedScene" uid="uid://dqvfi47nlxdb6" path="res://enemies/golem.tscn" id="8_mtimd"]
+[ext_resource type="PackedScene" uid="uid://b70l66bqr77ly" path="res://enemies/skeleton.tscn" id="9_a01x7"]
+[ext_resource type="PackedScene" uid="uid://blwoxnaoaot0g" path="res://enemies/rotten_witch.tscn" id="10_rkfnh"]
+[ext_resource type="PackedScene" uid="uid://d3xc6prb7dcrs" path="res://enemies/ice_wizard.tscn" id="11_y303a"]
+[ext_resource type="PackedScene" uid="uid://dv2j7j6j05msf" path="res://enemies/thief.tscn" id="12_40u2w"]
+[ext_resource type="PackedScene" uid="uid://dk6s5jdvvrerq" path="res://spawner.tscn" id="13_mtimd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a60ye"]
+radius = 150.0
+height = 550.0
+
+[node name="Boss" instance=ExtResource("1_7hfrd")]
+script = ExtResource("2_n18d2")
+snowball = ExtResource("3_nbsx1")
+wall_scene = ExtResource("4_85rbr")
+small_snowball = ExtResource("5_inxvj")
+shards = ExtResource("6_lh55n")
+enemy_list = Array[PackedScene]([ExtResource("7_6l5el"), ExtResource("8_mtimd"), ExtResource("9_a01x7"), ExtResource("10_rkfnh"), ExtResource("11_y303a"), ExtResource("12_40u2w")])
+spawner_scene = ExtResource("13_mtimd")
+max_health = 1000.0
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(7, 66)
+shape = SubResource("CapsuleShape2D_a60ye")
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(49, 9)
+scale = Vector2(1.645081, 1.645081)
+texture = ExtResource("2_a60ye")
+
+[node name="HealthBar" parent="." index="2"]
+offset_left = -383.0
+offset_top = 320.0
+offset_right = 385.0
+offset_bottom = 374.0
+
+[node name="AttackTimer" type="Timer" parent="." index="3"]
+wait_time = 5.0
+autostart = true
+
+[node name="WanderTimer" type="Timer" parent="." index="4"]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="AttackTimer" to="." method="attack"]
+[connection signal="timeout" from="WanderTimer" to="." method="new_wander_direction"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5o31bw08j8la"]
+
+[ext_resource type="PackedScene" uid="uid://namb3tekd3u0" path="res://enemies/projectile.tscn" id="1_qq5oe"]
+[ext_resource type="Script" uid="uid://c8u8dv30hiwl4" path="res://snowball.gd" id="2_nhddu"]
+
+[node name="Snowball" instance=ExtResource("1_qq5oe")]
+script = ExtResource("2_nhddu")
+
+[node name="CollisionShape2D" parent="." index="0"]
+scale = Vector2(0.33967096, 0.33967096)
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.22787437, 0.22787437)

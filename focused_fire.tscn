@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsgqed8l224d1"]
+
+[ext_resource type="PackedScene" uid="uid://cbrx1fscukb5w" path="res://attacks/Attack.tscn" id="1_0gfln"]
+[ext_resource type="Script" uid="uid://f6bhthmuebsb" path="res://focused_fire.gd" id="2_pyjiw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pyjiw"]
+height = 550.0
+
+[node name="FocusedFire" instance=ExtResource("1_0gfln")]
+script = ExtResource("2_pyjiw")
+damage = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+position = Vector2(274, 0)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_pyjiw")

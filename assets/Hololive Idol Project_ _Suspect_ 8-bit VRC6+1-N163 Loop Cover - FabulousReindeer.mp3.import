@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bc5rqcjqmemdw"
+path="res://.godot/imported/Hololive Idol Project_ _Suspect_ 8-bit VRC6+1-N163 Loop Cover - FabulousReindeer.mp3-500e8f22c29b36bb0180aa3c02835961.mp3str"
+
+[deps]
+
+source_file="res://assets/Hololive Idol Project_ _Suspect_ 8-bit VRC6+1-N163 Loop Cover - FabulousReindeer.mp3"
+dest_files=["res://.godot/imported/Hololive Idol Project_ _Suspect_ 8-bit VRC6+1-N163 Loop Cover - FabulousReindeer.mp3-500e8f22c29b36bb0180aa3c02835961.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
