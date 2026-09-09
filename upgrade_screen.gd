@@ -12,11 +12,12 @@ func _ready() -> void:
 	original = upgrade_list.duplicate(true)
 
 func reset() -> void:
-	upgrade_list = original.duplicate(true)
+	_clear_offers()
+	upgrade_list = original.duplicate()
 
 func refresh():
-	selected = null
-	for i in range(3):
+	_clear_offers()
+	for i in range(mini(3, upgrade_list.size())):
 		var upgrade: Upgrade = upgrade_list.pick_random()
 		add_child(upgrade)
 		upgrade.position = get_child(i + 1).position
@@ -24,17 +25,24 @@ func refresh():
 		on_screen.push_back(upgrade)
 
 func confirm():
-	if not selected:
+	if not is_instance_valid(selected) or selected not in on_screen:
 		return
+	var choice = selected
+	_clear_offers()
+	choice.buy(get_parent().player)
+	if not choice.repeat:
+		upgrade_list.erase(choice)
+	get_parent().next_level()
+
+func _clear_offers() -> void:
 	for upgrade in on_screen:
 		remove_child(upgrade)
-		upgrade_list.push_back(upgrade)
-	
+		if upgrade not in upgrade_list:
+			upgrade_list.push_back(upgrade)
 	on_screen.clear()
-	selected.buy(get_parent().player)
-	
-	if not selected.repeat:
-		upgrade_list.erase(selected)
-	
-	get_parent().next_level()
-	
+	selected = null
+
+func _exit_tree() -> void:
+	for upgrade in original:
+		if is_instance_valid(upgrade) and upgrade.get_parent() == null:
+			upgrade.free()

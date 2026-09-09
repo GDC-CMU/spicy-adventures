@@ -34,7 +34,7 @@ var knockback_vec: Vector2
 func effect_speed(multiplier: float, duration: float):
 	#print(multiplier, duration)
 	speed_multiplier *= multiplier
-	await get_tree().create_timer(duration).timeout
+	await get_tree().create_timer(duration, false).timeout
 	speed_multiplier /= multiplier
 
 func get_total_bonus():
@@ -65,6 +65,7 @@ func _ready() -> void:
 func remove_attack():
 	if current_attack:
 		remove_child(current_attack)
+		current_attack.queue_free()
 		current_attack = null
 		$FireSound.stop()
 	$BonusHUD.set_current_burn(0)
@@ -83,7 +84,7 @@ func change_attack(attack: Attack):
 		
 func knockback(vec: Vector2):
 	knockback_vec += vec * 5
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.2, false).timeout
 	knockback_vec -= vec * 5
 
 func change_facing() -> void:
@@ -111,23 +112,24 @@ func set_level_label(value: int):
 		$LevelLabel.text = "Level " + str(value)
 
 func _physics_process(delta: float) -> void:
+	var accepts_input = Arcade.gameplay_input_allowed()
 	var new_velocity = Vector2(0, 0)
-	if Input.is_action_pressed("ui_left"):
+	if accepts_input and Input.is_action_pressed("ui_left"):
 		new_velocity.x = -1
-	if Input.is_action_pressed("ui_right"):
+	if accepts_input and Input.is_action_pressed("ui_right"):
 		new_velocity.x = 1
-	if Input.is_action_pressed("ui_up"):
+	if accepts_input and Input.is_action_pressed("ui_up"):
 		new_velocity.y = -1
-	if Input.is_action_pressed("ui_down"):
+	if accepts_input and Input.is_action_pressed("ui_down"):
 		new_velocity.y = 1 
-	if Input.is_action_just_pressed("emergency heat"):
+	if accepts_input and Input.is_action_just_pressed("emergency heat"):
 		if available_emergency_heat:
 			add_heat(100)
 			available_emergency_heat = false
-	if Input.is_action_just_pressed("cheat_speed"):
+	if accepts_input and not Arcade.enabled and Input.is_action_just_pressed("cheat_speed"):
 		speed = 1000
 		burn_multiplier = 1000
-	if Input.is_action_just_pressed("discard"):
+	if accepts_input and Input.is_action_just_pressed("discard"):
 		if can_discard:
 			pop_queue()
 	if new_velocity != Vector2(0, 0):
@@ -141,7 +143,7 @@ func _physics_process(delta: float) -> void:
 	#print(velocity)
 	move_and_slide()
 	velocity = no_knockback
-	if Input.is_action_just_pressed("use"):
+	if accepts_input and Input.is_action_just_pressed("use"):
 		use_vegetable()
 	
 	reduce_heat(heat_usage * delta)
@@ -182,7 +184,7 @@ func pick_up(vegetable: Vegetable):
 func trigger_invisibility():
 	is_invicible = true
 	$Sprite2D.self_modulate.a = 0.5
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5, false).timeout
 	is_invicible = false
 	$Sprite2D.self_modulate.a = 1
 

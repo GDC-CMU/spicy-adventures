@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ddclncyyuy1tp"]
 
-[ext_resource type="Texture2D" uid="uid://dpwihbocy6iyq" path="res://assets/Gemini_Generated_Image_2hryp32hryp32hry.png" id="1_fwmhc"]
+[ext_resource type="Texture2D" uid="uid://5bv16irmfigo" path="res://assets/Gemini_Generated_Image_v1jnguv1jnguv1jn.png" id="1_fwmhc"]
 [ext_resource type="PackedScene" uid="uid://cnt416txh0opa" path="res://walls.tscn" id="2_gvs8d"]
 
 [node name="PepperCompendium" type="Node2D"]

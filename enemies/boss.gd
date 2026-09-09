@@ -47,17 +47,17 @@ func projectile_spiral(count: int, duration: float, projectile_scene: PackedScen
 		add_sibling(new_projectile)
 		new_projectile.position = position
 		new_projectile.set_direction(Vector2.RIGHT.rotated((PI*2/count) * i))
-		await get_tree().create_timer(duration / count).timeout
+		await get_tree().create_timer(duration / count, false).timeout
 
 func multi_spiral():
 	var count = 18
 	var duration = 1
 	projectile_spiral(count, duration, shards)
-	await  get_tree().create_timer(duration).timeout
+	await  get_tree().create_timer(duration, false).timeout
 	projectile_spiral(count, duration, small_snowball)
-	await  get_tree().create_timer(duration).timeout
+	await  get_tree().create_timer(duration, false).timeout
 	projectile_spiral(count, duration, shards)
-	await  get_tree().create_timer(duration).timeout
+	await  get_tree().create_timer(duration, false).timeout
 	projectile_spiral(count, duration, small_snowball)
 	
 
@@ -65,11 +65,11 @@ func multi_wave():
 	var count = 18
 	var delay = 0.4
 	projectile_wave(count, 0, shards)
-	await get_tree().create_timer(delay).timeout
+	await get_tree().create_timer(delay, false).timeout
 	projectile_wave(count, PI/count, shards)
-	await get_tree().create_timer(delay).timeout
+	await get_tree().create_timer(delay, false).timeout
 	projectile_wave(count, 0, small_snowball)
-	await get_tree().create_timer(delay).timeout
+	await get_tree().create_timer(delay, false).timeout
 	projectile_wave(count, PI/count, small_snowball)
 
 func spawn_spawners():
